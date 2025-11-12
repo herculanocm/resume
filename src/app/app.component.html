@@ -10,12 +10,17 @@
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link smooth-scroll" href="#about" appSmoothScroll>About</a></li>
-          <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill" appSmoothScroll>Skill</a></li>
-          <li class="nav-item"><a class="nav-link smooth-scroll" href="#formacao" appSmoothScroll>Academic</a></li>
-          <!--<li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>-->
-          <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience" appSmoothScroll>Experience</a></li>
-
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#about" appSmoothScroll *ngIf="currentLang === 'en'">About</a><a class="nav-link smooth-scroll" href="#about" appSmoothScroll *ngIf="currentLang === 'pt'">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill" appSmoothScroll *ngIf="currentLang === 'en'">Skill</a><a class="nav-link smooth-scroll" href="#skill" appSmoothScroll *ngIf="currentLang === 'pt'">Competências</a></li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#formacao" appSmoothScroll *ngIf="currentLang === 'en'">Academic</a><a class="nav-link smooth-scroll" href="#formacao" appSmoothScroll *ngIf="currentLang === 'pt'">Formação</a></li>
+          <!--<li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio" *ngIf="currentLang === 'en'">Portfolio</a><a class="nav-link smooth-scroll" href="#portfolio" *ngIf="currentLang === 'pt'">Portfólio</a></li>-->
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience" appSmoothScroll *ngIf="currentLang === 'en'">Experience</a><a class="nav-link smooth-scroll" href="#experience" appSmoothScroll *ngIf="currentLang === 'pt'">Experiência</a></li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#tools" appSmoothScroll *ngIf="currentLang === 'en'">Tools</a><a class="nav-link smooth-scroll" href="#tools" appSmoothScroll *ngIf="currentLang === 'pt'">Ferramentas</a></li>
+          <li class="nav-item">
+            <button class="btn btn-sm btn-outline-light ml-2" (click)="toggleLanguage()" style="margin-left: 10px;">
+              <i class="fa fa-language"></i> {{ currentLang === 'en' ? 'PT' : 'EN' }}
+            </button>
+          </li>
         </ul>
       </div>
   </nav>
@@ -35,12 +40,12 @@
               <p class="category text-white">Data Engineer AI | Tech Lead | Data Architect | Full Stack</p>
               <!--<a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Contatos</a>-->
               <a class="btn btn-primary"
-                href="https://s3-sa-east-1.amazonaws.com/herculanocm.com/HerculanoCunhaCurriculo24Eng.pdf"
+                href="https://s3-sa-east-1.amazonaws.com/herculanocm.com/HerculanoCunhaCurriculo25Eng.pdf"
                 target="_blank" data-aos="zoom-in" data-aos-anchor="data-aos-anchor" style="width: auto;">Download CV -
                 English</a>
 
               <a class="btn btn-primary"
-                href="https://s3-sa-east-1.amazonaws.com/herculanocm.com/HerculanoCunhaCurriculo24PtBr.pdf"
+                href="https://s3-sa-east-1.amazonaws.com/herculanocm.com/HerculanoCunhaCurriculo25PtBR.pdf"
                 target="_blank" data-aos="zoom-in" data-aos-anchor="data-aos-anchor" style="width: auto;">Currículo em
                 Português</a>
 
@@ -60,25 +65,34 @@
         <div class="row">
           <div class="col-lg-6 col-md-12">
             <div class="card-body">
-              <div class="h4 mt-0 title">About</div>
-              <p style="font-size: 18px">Hi there! I have over 10 years of experience working with data and technology, 
-                where I have been responsible for leading, architecting, managing, and developing analytics environments. 
-                Throughout these years, I have built a solid career in the field of data. My expertise ranges from implementing Big Data and data solutions to programming, 
-                and I am always eager to embrace new challenges and learn emerging technologies.
-                Currently, I am taking on the exciting challenge of working with AI, focusing on creating innovative data products using this technology.
+              <div class="h4 mt-0 title" *ngIf="currentLang === 'en'">About</div>
+              <div class="h4 mt-0 title" *ngIf="currentLang === 'pt'">Sobre</div>
+              
+              <p style="font-size: 18px" *ngIf="currentLang === 'en'">Hello! My name is Herculano. I have over 12 years of experience in Information Technology, specializing in
+                data-driven solutions and enterprise software development. I am passionate about technology and innovation, with a proven track record in multidisciplinary teams,
+                seamlessly bridging the gap between technical and business domains. While I have a deep love for programming, 
+                I have increasingly taken on leadership and architectural roles.
+              </p>
+              
+              <p style="font-size: 18px" *ngIf="currentLang === 'pt'">Olá! Meu nome é Herculano. Tenho mais de 12 anos de experiência em Tecnologia da Informação, especializado em
+                soluções orientadas a dados e desenvolvimento de software corporativo. Sou apaixonado por tecnologia e inovação, com experiência comprovada em equipes multidisciplinares,
+                conectando de forma eficiente as áreas técnica e de negócios. Apesar do meu grande interesse por programação,
+                venho assumindo cada vez mais funções de liderança e arquitetura.
               </p>
             </div>
           </div>
           <div class="col-lg-6 col-12">
             <div class class="card-body">
-              <div class="h4 mt-0 title">General Information</div>
+              <div class="h4 mt-0 title" *ngIf="currentLang === 'en'">General Information</div>
+              <div class="h4 mt-0 title" *ngIf="currentLang === 'pt'">Informações Gerais</div>
 
 
               <div class="col-12" style="padding: 0px;margin: 0px;">
                 <div class="row">
                   <div class="col-2" style="text-align: right;font-size: 18px"><strong class="text-uppercase"
                       style="vertical-align: top;"><i class="fa fa-globe" aria-hidden="true"></i></strong></div>
-                  <div class="col-10" style="font-size: 18px">Brazilian - Maried</div>
+                  <div class="col-10" style="font-size: 18px" *ngIf="currentLang === 'en'">Brazilian - Married</div>
+                  <div class="col-10" style="font-size: 18px" *ngIf="currentLang === 'pt'">Brasileiro - Casado</div>
                 </div>
               </div>
 
@@ -86,7 +100,8 @@
                 <div class="row">
                   <div class="col-2" style="text-align: right;font-size: 18px"><strong class="text-uppercase"
                       style="vertical-align: top;"><i class="fa fa-mars" aria-hidden="true"></i></strong></div>
-                  <div class="col-10" style="font-size: 18px">34 years old - Cis/Hetero</div>
+                  <div class="col-10" style="font-size: 18px" *ngIf="currentLang === 'en'">July/1990 - Cis/Hetero</div>
+                  <div class="col-10" style="font-size: 18px" *ngIf="currentLang === 'pt'">Julho/1990 - Cis/Hetero</div>
                 </div>
               </div>
 
@@ -148,134 +163,89 @@
 </div>
 <div class="section" id="skill">
   <div class="container">
-    <div class="h4 text-center mb-4 title">Technical Knowledge</div>
+    <div class="h4 text-center mb-4 title" *ngIf="currentLang === 'en'">Competencies Summary</div>
+    <div class="h4 text-center mb-4 title" *ngIf="currentLang === 'pt'">Resumo de Competências</div>
     <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="card-body">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Cloud (AWS, Azure, GCP)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 90%;"></div><span class="progress-value">90%</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">DEVOPS (GITHUB Actions,
-                Jenkins)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 75%;"></div><span class="progress-value">75%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">SGBDs (Redshift, Cassandra,
-                MongoDB, MSSQLServer,
-                OracleDB, PostgreSQL, Mysql) </span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 90%;"></div><span class="progress-value">90%</span>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">ETL Tools (Spark, Glue,
-                Databricks, DataProc, MS SSIS,
-                IBM InfoSphere DataStage)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 95%;"></div><span class="progress-value">95%</span>
-              </div>
-            </div>
-          </div>
-
-
-
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Agile Methodologies (Scrum,
-                Kaban, Jira)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 80%;"></div><span class="progress-value">80%</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">CONTAINERS (Docker, Kubernetes,
-                Rancher)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 80%;"></div><span class="progress-value">85%</span>
-              </div>
-            </div>
+        
+        <div class="row mb-3">
+          <div class="col-12">
+            <h5 class="text-primary" *ngIf="currentLang === 'en'"><strong>Leadership & Team Development</strong></h5>
+            <h5 class="text-primary" *ngIf="currentLang === 'pt'"><strong>Liderança e Desenvolvimento de Equipes</strong></h5>
+            <p *ngIf="currentLang === 'en'">Lead and develop teams in data engineering, data analysis, software development, and data science.
+              Create products, solutions, and data pipelines that are robust, integral, resilient, efficient and secure.
+              Consistently strive to understand and meet business needs, fostering integration between data systems, statistical models, and stakeholders.</p>
+            <p *ngIf="currentLang === 'pt'">Lidero e desenvolvo equipes em engenharia de dados, análise de dados, desenvolvimento de software e ciência de dados.
+              Crio produtos, soluções e pipelines de dados robustos, íntegros, resilientes, eficientes e seguros.
+              Busco constantemente entender e atender às necessidades do negócio, promovendo a integração entre sistemas de dados, modelos estatísticos e stakeholders.</p>
           </div>
         </div>
 
-        <div class="row">
-
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Servers (Windows Server,
-                Linux)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 100%;"></div><span class="progress-value">100%</span>
-              </div>
-            </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <h5 class="text-primary" *ngIf="currentLang === 'en'"><strong>Data Lake/Lake House Management</strong></h5>
+            <h5 class="text-primary" *ngIf="currentLang === 'pt'"><strong>Gerenciamento de Data Lake/Lake House</strong></h5>
+            <p *ngIf="currentLang === 'en'">Design and manage Data Lake/Lake House environments both in the cloud (primarily AWS, Azure, GCP) and 
+              on-premises. Utilize tools such as Databricks, AWS services (MWAA/Airflow, Step Functions, Glue, EMR, Athena, Redshift, KMS), 
+              Azure services (Data Factory, Synapse, Databricks) and others to create scalable, secure, 
+              and efficient data platforms with a strong focus on <strong>security, governance, and cost control (FINOPS)</strong>.</p>
+            <p *ngIf="currentLang === 'pt'">Projeto e gerencio ambientes de Data Lake/Lake House tanto na nuvem (principalmente AWS, Azure, GCP) quanto 
+              on-premises. Utilizo ferramentas como Databricks, serviços AWS (MWAA/Airflow, Step Functions, Glue, EMR, Athena, Redshift, KMS), 
+              serviços Azure (Data Factory, Synapse, Databricks) e outros para criar plataformas de dados escaláveis, seguras 
+              e eficientes com forte foco em <strong>segurança, governança e controle de custos (FINOPS)</strong>.</p>
           </div>
-
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Colaboration (O365, Google
-                G-Suite)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 70%;"></div><span class="progress-value">70%</span>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <div class="row">
-
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">BackEnd Langs (SQL, Java, Scala,
-                Python, Javascript, C#)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 99%;"></div><span class="progress-value">99%</span>
-              </div>
-            </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <h5 class="text-primary" *ngIf="currentLang === 'en'"><strong>ETL/ELT Pipeline & API Development</strong></h5>
+            <h5 class="text-primary" *ngIf="currentLang === 'pt'"><strong>Desenvolvimento de Pipelines ETL/ELT e APIs</strong></h5>
+            <p *ngIf="currentLang === 'en'">Develop robust ETL/ELT pipelines and RESTful APIs to enable continuous integration with streaming, transactional,
+              batch environments and statistical models. Expertise in real-time data processing using Apache Kafka, AWS Kinesis, and event-driven architectures.</p>
+            <p *ngIf="currentLang === 'pt'">Desenvolvo pipelines ETL/ELT robustos e APIs RESTful para permitir integração contínua com streaming, transações,
+              ambientes batch e modelos estatísticos. Expertise em processamento de dados em tempo real usando Apache Kafka, AWS Kinesis e arquiteturas orientadas a eventos.</p>
           </div>
+        </div>
 
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">FrontEnd Langs (Javascript,
-                Angular,
-                React)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                  data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                  style="width: 80%;"></div><span class="progress-value">80%</span>
-              </div>
-            </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <h5 class="text-primary" *ngIf="currentLang === 'en'"><strong>Enterprise Java Development</strong></h5>
+            <h5 class="text-primary" *ngIf="currentLang === 'pt'"><strong>Desenvolvimento Java Corporativo</strong></h5>
+            <p *ngIf="currentLang === 'en'">Over 10 years of experience developing enterprise-grade applications using Java ecosystem. 
+              Proficient in Spring Boot, Quarkus, Hibernate/JPA for building microservices, RESTful APIs, and batch processing systems. 
+              Strong background in design patterns, SOLID principles, and clean architecture.</p>
+            <p *ngIf="currentLang === 'pt'">Mais de 10 anos de experiência desenvolvendo aplicações corporativas usando o ecossistema Java. 
+              Proficiente em Spring Boot, Quarkus, Hibernate/JPA para construir microsserviços, APIs RESTful e sistemas de processamento em lote. 
+              Forte conhecimento em padrões de design, princípios SOLID e arquitetura limpa.</p>
           </div>
+        </div>
 
+        <div class="row mb-3">
+          <div class="col-12">
+            <h5 class="text-primary" *ngIf="currentLang === 'en'"><strong>Workflow Orchestration & Backend Systems</strong></h5>
+            <h5 class="text-primary" *ngIf="currentLang === 'pt'"><strong>Orquestração de Workflows e Sistemas Backend</strong></h5>
+            <p *ngIf="currentLang === 'en'">Develop and maintain workflows and DAGs, primarily using Apache Airflow (both managed services and Kubernetes deployments).
+              Possess expertise in other orchestration platforms like AWS Step Functions, Azure Data Factory, and Prefect.
+              Extensive experience creating and integrating backend systems (legacy and modern high-performance) using Java (Spring Boot, Quarkus), 
+              Python (Flask, FastAPI), Scala, and JavaScript (Node.js).</p>
+            <p *ngIf="currentLang === 'pt'">Desenvolvo e mantenho workflows e DAGs, principalmente usando Apache Airflow (tanto serviços gerenciados quanto deployments em Kubernetes).
+              Possuo expertise em outras plataformas de orquestração como AWS Step Functions, Azure Data Factory e Prefect.
+              Vasta experiência criando e integrando sistemas backend (legados e modernos de alto desempenho) usando Java (Spring Boot, Quarkus), 
+              Python (Flask, FastAPI), Scala e JavaScript (Node.js).</p>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-12">
+            <h5 class="text-primary" *ngIf="currentLang === 'en'"><strong>Modern Data Engineering Practices</strong></h5>
+            <h5 class="text-primary" *ngIf="currentLang === 'pt'"><strong>Práticas Modernas de Engenharia de Dados</strong></h5>
+            <p *ngIf="currentLang === 'en'">Implement DataOps principles, Infrastructure as Code (Terraform, CloudFormation), 
+              data quality frameworks, observability and monitoring solutions. Experience with data governance, cataloging (AWS Glue Catalog, DataHub), 
+              and ensuring compliance with data privacy regulations (LGPD/GDPR).</p>
+            <p *ngIf="currentLang === 'pt'">Implemento princípios de DataOps, Infraestrutura como Código (Terraform, CloudFormation), 
+              frameworks de qualidade de dados, soluções de observabilidade e monitoramento. Tenho experiência em governança de dados, catalogação (AWS Glue Catalog, DataHub) 
+              e garantia de conformidade com normas de privacidade de dados (LGPD/GDPR).</p>
+          </div>
         </div>
 
       </div>
@@ -285,35 +255,58 @@
 
 <div class="section" id="formacao">
   <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Academic Formation</div>
+    <div class="h4 text-center mb-4 title" *ngIf="currentLang === 'en'">Academic Formation</div>
+    <div class="h4 text-center mb-4 title" *ngIf="currentLang === 'pt'">Formação Acadêmica</div>
     <div class="card">
 
       <div class="row">
         <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <p>2017 - 2018*</p>
-            <div class="h5">Master’s Degree</div>
+            <p>2017 - 2018</p>
+            <div class="h5" *ngIf="currentLang === 'en'">Specialization</div>
+            <div class="h5" *ngIf="currentLang === 'pt'">Especialização</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
             <div class="h5">Big Data</div>
             <p class="category">BRA - PUC Minas, Uberlândia</p>
-            The course aims at training specialists in Big Data and Analytics who gather solid knowledge
-            in the main Big Data technologies, in addition to methodologies used in the global market, knowing
-            business models, architecture, strategic governance and solutions practiced in the market.<br>
+            
+            <span *ngIf="currentLang === 'en'">
+              The course aims at training specialists in Big Data and Analytics who gather solid knowledge
+              in the main Big Data technologies, in addition to methodologies used in the global market, knowing
+              business models, architecture, strategic governance and solutions practiced in the market.<br>
 
-            Some of the topics applied in the course:<br>
+              Some of the topics applied in the course:<br>
 
-            <ul>
-              <li>Parallel storage and processing systems for horizontal scale
-                with Hadoop, Spark, Hive and others.</li>
-              <li>Relational and non-relational database models in the application of
-                analytics. </li>
-              <li>Architecture and processing of real-time systems.</li>
-              <li>Creation and maintenance of statistical models for business applications.</li>
-              <li>Among others...</li>
-            </ul>
+              <ul>
+                <li>Parallel storage and processing systems for horizontal scale
+                  with Hadoop, Spark, Hive and others.</li>
+                <li>Relational and non-relational database models in the application of
+                  analytics. </li>
+                <li>Architecture and processing of real-time systems.</li>
+                <li>Creation and maintenance of statistical models for business applications.</li>
+                <li>Among others...</li>
+              </ul>
+            </span>
+            
+            <span *ngIf="currentLang === 'pt'">
+              O curso tem como objetivo formar especialistas em Big Data e Analytics com conhecimento sólido
+              nas principais tecnologias do mercado, além de metodologias globais, abordando
+              modelos de negócios, arquitetura, governança estratégica e soluções aplicadas.<br>
+
+              Alguns tópicos abordados no curso:<br>
+
+              <ul>
+                <li>Sistemas de armazenamento e processamento paralelo em larga escala
+                  com Hadoop, Spark, Hive e outros.</li>
+                <li>Modelos de bancos de dados relacionais e não relacionais aplicados à
+                  análise de dados.</li>
+                <li>Arquitetura e processamento de sistemas em tempo real.</li>
+                <li>Criação e manutenção de modelos estatísticos para aplicações empresariais.</li>
+                <li>Entre outros...</li>
+              </ul>
+            </span>
 
 
           </div>
@@ -327,29 +320,52 @@
         <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
             <p>2009 - 2013</p>
-            <div class="h5">Bachelor’s degree</div>
+            <div class="h5" *ngIf="currentLang === 'en'">Bachelor</div>
+            <div class="h5" *ngIf="currentLang === 'pt'">Bacharelado</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Information System</div>
+            <div class="h5" *ngIf="currentLang === 'en'">Information System</div>
+            <div class="h5" *ngIf="currentLang === 'pt'">Sistema de Informação</div>
             <p class="category">BRA - Faculdade Politécnica, Uberlândia</p>
-            This course is a higher education course and is what most prepared students to work in the market at that
-            time.
-            The student would have to choose between (Science, engineering or information systems), I was assertive when
-            choosing this one that gave me baggage for the race in the vacancies disputes for the best performances.<br>
+            
+            <span *ngIf="currentLang === 'en'">
+              This course is a higher education course and is what most prepared students to work in the market at that
+              time.
+              The student would have to choose between (Science, engineering or information systems), I was assertive when
+              choosing this one that gave me baggage for the race in the vacancies disputes for the best performances.<br>
 
-            The course has several objectives, some of which are worth highlighting.:<br>
-            <ul>
-              <li>Provides a solid background in Software Engineering and development of
-                systems.</li>
-              <li>Preparatory for the use of relational database 
-                in applications.</li>
-              <li>Solidifier on computer networks, operating systems and
-                interfaces.</li>
-              <li>Systems Project Management Trainer.</li>
-              <li>Among others...</li>
-            </ul>
+              The course has several objectives, some of which are worth highlighting.:<br>
+              <ul>
+                <li>Provides a solid background in Software Engineering and development of
+                  systems.</li>
+                <li>Preparatory for the use of relational database 
+                  in applications.</li>
+                <li>Solidifier on computer networks, operating systems and
+                  interfaces.</li>
+                <li>Systems Project Management Trainer.</li>
+                <li>Among others...</li>
+              </ul>
+            </span>
+            
+            <span *ngIf="currentLang === 'pt'">
+              Este curso superior foi o que mais preparou os alunos para o mercado de trabalho naquela época.
+              O estudante precisava escolher entre Ciência, Engenharia ou Sistemas de Informação; fui assertivo ao
+              optar por este, que me deu base para disputar vagas e alcançar melhores resultados.<br>
+
+              O curso possui diversos objetivos, entre eles:<br>
+              <ul>
+                <li>Proporcionar uma base sólida em Engenharia de Software e desenvolvimento de
+                  sistemas.</li>
+                <li>Preparar para o uso de bancos de dados relacionais
+                  em aplicações.</li>
+                <li>Fortalecer conhecimentos em redes de computadores, sistemas operacionais e
+                  interfaces.</li>
+                <li>Formar profissionais em Gerenciamento de Projetos de Sistemas.</li>
+                <li>Entre outros...</li>
+              </ul>
+            </span>
 
 
           </div>
@@ -367,7 +383,8 @@
 
 <div class="section" id="experience">
   <div class="container cc-experience">
-    <div class="h4 text-center mb-4 title">Profesional Experience</div>
+    <div class="h4 text-center mb-4 title" *ngIf="currentLang === 'en'">Professional Experience</div>
+    <div class="h4 text-center mb-4 title" *ngIf="currentLang === 'pt'">Experiência Profissional</div>
     <div class="card">
       <div class="row">
         <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
@@ -378,22 +395,31 @@
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Tech Lead - Data Enginner</div>
-            <p>
-              Interdisciplinary role.<br>
+            <div class="h5" *ngIf="currentLang === 'en'">Tech Lead - Data Engineer</div>
+            <div class="h5" *ngIf="currentLang === 'pt'">Líder Técnico - Engenheiro de Dados</div>
+            
+            <p *ngIf="currentLang === 'en'">
+              Multidisciplinary role.<br><br>
 
-              As a Tech Lead, I leverage my expertise to make critical technical and strategic decisions, ensuring the
-              success of data/software projects. I take full responsibility for the team's outcomes, consistently
-              fostering motivation and engagement. I specialize in developing and leading the implementation of robust
-              data pipeline solutions.<br>
-
-              With proficiency in technical leadership, data architecture, pipeline development, and data integration,
-              this role empowers me to extend beyond the IT domain. I recognize that addressing business challenges is
-              the primary and most crucial focus. The ability to navigate and contribute to business subjects is a
-              central aspect of my role, reflecting my commitment to achieving both technical excellence and business
-              success.
-
+              As a Tech Lead, I leverage my expertise to make critical technical and strategic decisions, ensuring the success of data/software projects.<br>
+              I take full responsibility for the team's outcomes, consistently fostering motivation and engagement.<br>
+              I specialize in developing and leading the implementation of robust data pipeline solutions.<br>
+              With proficiency in technical leadership, data architecture, pipeline development, and data integration, this role empowers me to extend beyond the IT domain.<br> 
+              I recognize that addressing business challenges is the primary and most crucial focus.<br>
+              The ability to navigate and contribute to business subjects is a central aspect of my role, reflecting my commitment to achieving both technical excellence and business success.
             </p>
+            
+            <p *ngIf="currentLang === 'pt'">
+              Papel multidisciplinar.<br><br>
+
+              Como Líder Técnico, utilizo minha experiência para tomar decisões técnicas e estratégicas essenciais, garantindo o sucesso dos projetos de dados e software.<br>
+              Assumo total responsabilidade pelos resultados da equipe, promovendo motivação e engajamento contínuos.<br>
+              Sou especializado em desenvolver e liderar a implementação de soluções robustas de pipelines de dados.<br>
+              Com proficiência em liderança técnica, arquitetura de dados, desenvolvimento de pipelines e integração de dados, este papel me permite ir além do universo de TI.<br> 
+              Reconheço que enfrentar desafios de negócio é o foco principal e mais importante.<br>
+              A capacidade de atuar e contribuir com temas empresariais é central no meu papel, refletindo meu compromisso com a excelência técnica e o sucesso do negócio.
+            </p>
+
           </div>
         </div>
       </div>
@@ -408,47 +434,25 @@
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Data Enginner - Tech Lead</div>
-            <p>
+            <div class="h5" *ngIf="currentLang === 'en'">Data Engineer - Tech Lead</div>
+            <div class="h5" *ngIf="currentLang === 'pt'">Engenheiro de Dados - Líder Técnico</div>
+            <p *ngIf="currentLang === 'en'">
               Focused role performance for data engineering and BigData.<br>
-
-              My career at this company begins with the desire and need to
-              shift from traditional BI to the bigdata era,
-              accepting a challenge proposal that would change the customary way of
-              work.<br>
-
-              The company in question needed to transform its outdated BI area
-              on an agile, horizontal and resilient analytics platform
-              that would meet the minimum requirements required of the ecosystem that
-              set out to deliver smart banking services,
-              cheap and competitive to your customers.<br>
-
-              I accepted this challenge and since then I've initially moved from
-              BI systems for
-              Systems Analyst and now for Data Engineer, the positions have been
-              adapting as the work was demonstrated and the company grew with the
-              maturation of these new areas.
-
-              In this experience, learning was increasing, as we permeated 3 directorates
-              (Technology, Strategic Planning and Products) with distinct strategies that
-              brought technical knowledge closer to the business in a way
-              exponential.<br>
-
-              Among several achievements, it is worth mentioning the implementation of lakeHouse in
-              cloud for self-service of the business areas, this activity enabled the
-              independence
-              of the business as well as bureaucratic requests for data analysis, reports and
-              panels to Information Technology, with that
-              there was also the implementation of new tools for exploration and analysis of
-              data like SAS, Tableau and PowerBI,
-              implementation of 3 statistical and strategic models ( Churn, recommendation and
-              prospection).<br>
-
-              I am currently in the area of architecture and governance with scope of activities
-              aimed at creating a highly available data platform and
-              resilient, that can meet LGPD and OpenBanking projects and areas of
-              organization focused on open source and cloud services.<br>
-
+              My career at this company begins with the desire and need to shift from traditional BI to the bigdata era, accepting a challenge proposal that would change the customary way of work.<br>
+              The company in question needed to transform its outdated BI area on an agile, horizontal and resilient analytics platform that would meet the minimum requirements required of the ecosystem that set out to deliver smart banking services, cheap and competitive to your customers.<br>
+              I accepted this challenge and since then I've initially moved from BI systems for Systems Analyst and now for Data Engineer, the positions have been adapting as the work was demonstrated and the company grew with the maturation of these new areas.
+              In this experience, learning was increasing, as we permeated 3 directorates (Technology, Strategic Planning and Products) with distinct strategies that brought technical knowledge closer to the business in a way exponential.<br>
+              Among several achievements, it is worth mentioning the implementation of lakeHouse in cloud for self-service of the business areas, this activity enabled the independence of the business as well as bureaucratic requests for data analysis, reports and panels to Information Technology, with that there was also the implementation of new tools for exploration and analysis of data like SAS, Tableau and PowerBI, implementation of 3 statistical and strategic models (Churn, recommendation and prospection).<br>
+              I am currently in the area of architecture and governance with scope of activities aimed at creating a highly available data platform and resilient, that can meet LGPD and OpenBanking projects and areas of organization focused on open source and cloud services.<br>
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Atuação focada em engenharia de dados e Big Data.<br>
+              Minha trajetória na empresa começou com o desejo e a necessidade de migrar do BI tradicional para a era do big data, aceitando um desafio que mudaria a forma habitual de trabalho.<br>
+              A empresa precisava transformar sua área de BI desatualizada em uma plataforma de analytics ágil, horizontal e resiliente, capaz de atender aos requisitos mínimos do ecossistema para entregar serviços bancários inteligentes, baratos e competitivos aos clientes.<br>
+              Aceitei esse desafio e, desde então, evoluí de sistemas de BI para Analista de Sistemas e, posteriormente, para Engenheiro de Dados, com as funções se adaptando conforme o trabalho era demonstrado e a empresa crescia com a maturação dessas novas áreas.<br>
+              Nessa experiência, o aprendizado foi constante, pois atuamos em 3 diretorias (Tecnologia, Planejamento Estratégico e Produtos) com estratégias distintas que aproximaram o conhecimento técnico do negócio de forma exponencial.<br>
+              Entre as conquistas, destaco a implementação do lakeHouse em nuvem para autosserviço das áreas de negócio, atividade que proporcionou independência do negócio e agilidade nas solicitações de análise de dados, relatórios e painéis para a TI. Também houve a implementação de novas ferramentas para exploração e análise de dados, como SAS, Tableau e PowerBI, além da implantação de 3 modelos estatísticos e estratégicos (Churn, recomendação e prospecção).<br>
+              Atualmente, atuo na área de arquitetura e governança, com escopo voltado para a criação de uma plataforma de dados altamente disponível e resiliente, capaz de atender projetos de LGPD e OpenBanking, com foco em soluções open source e serviços em nuvem.<br>
             </p>
           </div>
         </div>
@@ -466,52 +470,37 @@
           <div class="card-body">
             <div class="h5">BI Analyst and Architect</div>
  
-              With a focus on information analysis, construction of cubes oriented to
-              decision making, insight gathering, business architecture design
-              Intelligence and Big Data.<br>
-
-              I started working on BI and later on BIG DATA at ALGAR TECH in
-              together with the process management area, where we mine and develop
-              Dashboards
-              and templates through ETL and statistical techniques to support the pillar,
-              after
-              we have consolidated a BI factory to meet all the needs of the company, be it
-              she
-              processes, operations, marketing, finance, business, etc.
-
-              Dealing with the needs
-              of customers evolves in knowledge with analysis of requirements, analysis of
-              business,
-              policy
-              applied internally, so I spoke the client's language and interpreted it for the
-              technology
-              of BI, today in addition to developing, analyzing, prospecting, training I coordinate a
-              team of
-              analysts working on internal and external projects. It is worth mentioning that
-              I had
-              O
-              pleasure to participate in several external projects, among them the outstanding "MRE-
-              Ministry
-              Foreign Affairs, where I traveled to Brasilia and we carried out consultancy
-              complete, other
-              important in Brasilia was ELETROBRAS-ELETRONORTE, my team and I
-              we did a great job. There are several successful cases, of which I am proud
-              in
-              to have
-              participated either as a developer, consultant or analyst.<br>
-
+            <p *ngIf="currentLang === 'en'">
+              With a focus on information analysis, construction of cubes oriented to decision making, insight gathering, business architecture design, Intelligence and Big Data.<br>
+              I started working on BI and later on BIG DATA at ALGAR TECH in together with the process management area, where we mine and develop Dashboards and templates through ETL and statistical techniques to support the pillar, after we have consolidated a BI factory to meet all the needs of the company, be it processes, operations, marketing, finance, business, etc.
+              Dealing with the needs of customers evolves in knowledge with analysis of requirements, analysis of business, policy applied internally, so I spoke the client's language and interpreted it for the technology of BI, today in addition to developing, analyzing, prospecting, training I coordinate a team of analysts working on internal and external projects. It is worth mentioning that I had the pleasure to participate in several external projects, among them the outstanding "MRE-Ministry Foreign Affairs", where I traveled to Brasilia and we carried out consultancy complete, other important in Brasilia was ELETROBRAS-ELETRONORTE, my team and I we did a great job. There are several successful cases, of which I am proud in to have participated either as a developer, consultant or analyst.<br>
               Some of the activities carried out among others:<br>
-
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Foco em análise de informações, construção de cubos para tomada de decisão, obtenção de insights, desenho de arquitetura de negócios, Inteligência e Big Data.<br>
+              Iniciei minha atuação em BI e posteriormente em BIG DATA na ALGAR TECH, junto à área de gestão de processos, onde minerávamos e desenvolvíamos dashboards e templates por meio de técnicas de ETL e estatística para dar suporte ao pilar. Após isso, consolidamos uma fábrica de BI para atender todas as demandas da empresa, seja de processos, operações, marketing, finanças, negócios, etc.<br>
+              O atendimento às necessidades dos clientes evoluía com análise de requisitos, análise de negócios e políticas internas, falando a linguagem do cliente e traduzindo para a tecnologia de BI. Atualmente, além de desenvolver, analisar, prospectar e treinar, coordeno uma equipe de analistas em projetos internos e externos. Destaco a participação em diversos projetos externos, como o "MRE-Ministério das Relações Exteriores", onde fui a Brasília para consultoria completa, e também a ELETROBRAS-ELETRONORTE, ambos com resultados de destaque. São vários casos de sucesso dos quais me orgulho de ter participado como desenvolvedor, consultor ou analista.<br>
+              Algumas das atividades realizadas, entre outras:<br>
+            </p>
             <ul>
-              <li>Business process mapping.</li>
-              <li>Development and management of business projects.</li>
-              <li>Implementation and maintenance of process automation.</li>
-              <li>Gathering business requirements.</li>
-              <li>Risk assessment for project implementation.</li>
-              <li>QlikView tool development for management.</li>
-              <li>Development team coordination.</li>
-              <li>Talent training for knowledge of the Qlikview platform.</li>
-              <li>BI interview and consulting.</li>
+              <li *ngIf="currentLang === 'en'">Business process mapping.</li>
+              <li *ngIf="currentLang === 'pt'">Mapeamento de processos de negócio.</li>
+              <li *ngIf="currentLang === 'en'">Development and management of business projects.</li>
+              <li *ngIf="currentLang === 'pt'">Desenvolvimento e gestão de projetos empresariais.</li>
+              <li *ngIf="currentLang === 'en'">Implementation and maintenance of process automation.</li>
+              <li *ngIf="currentLang === 'pt'">Implementação e manutenção de automação de processos.</li>
+              <li *ngIf="currentLang === 'en'">Gathering business requirements.</li>
+              <li *ngIf="currentLang === 'pt'">Levantamento de requisitos de negócio.</li>
+              <li *ngIf="currentLang === 'en'">Risk assessment for project implementation.</li>
+              <li *ngIf="currentLang === 'pt'">Avaliação de riscos para implementação de projetos.</li>
+              <li *ngIf="currentLang === 'en'">QlikView tool development for management.</li>
+              <li *ngIf="currentLang === 'pt'">Desenvolvimento de ferramentas QlikView para gestão.</li>
+              <li *ngIf="currentLang === 'en'">Development team coordination.</li>
+              <li *ngIf="currentLang === 'pt'">Coordenação de equipe de desenvolvimento.</li>
+              <li *ngIf="currentLang === 'en'">Talent training for knowledge of the Qlikview platform.</li>
+              <li *ngIf="currentLang === 'pt'">Treinamento de talentos para conhecimento da plataforma QlikView.</li>
+              <li *ngIf="currentLang === 'en'">BI interview and consulting.</li>
+              <li *ngIf="currentLang === 'pt'">Entrevista e consultoria em BI.</li>
             </ul>
 
            
@@ -520,74 +509,353 @@
       </div>
     </div>
 
+  </div>
+</div>
+
+<div class="section" id="tools">
+  <div class="container cc-experience">
+    <div class="h4 text-center mb-4 title" *ngIf="currentLang === 'en'">Skills, Platform, Tools and Others</div>
+    <div class="h4 text-center mb-4 title" *ngIf="currentLang === 'pt'">Habilidades, Plataformas, Ferramentas e Outros</div>
+    
+    <!-- Cloud Skills -->
     <div class="card">
       <div class="row">
         <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-experience-header">
-            <p>2013 - 2014</p>
-            <div class="h5">Bradesco</div>
+            <p>Cloud</p>
+            <div class="h5">AWS</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Support Analyst</div>
-            
-
-              Acting as an analyst responsible for the correct maintenance of the systems
-              operating systems, management systems and databases to support the
-              services and products
-              sold and supported by Bradesco.<br>
-              Some of the activities carried out among others:<br>
-            <ul>
-
-              <li>Meeting with StackHolders to define demands</li>
-              <li>Support center for decision-making at critical times</li>
-              <li>Creating and maintaining support documentation</li>
-              <li>Creation of indicator reports for clients</li>
-              <li>Support to Management and internal communication</li>
-              <li>Customer support</li>
-
-            </ul>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>2012 - 2013</p>
-            <div class="h5">Cedro Finances</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Analyst Internship</div>
-            <p>
-
-              Activity developed defining work methods and processes, studying times
-              and parameters, mapping the flow of activities and identifying failures, in order to
-              to establish
-              strategies for solving problems and proposing continuous improvement of processes.<br>
-              Activities carried out such as implementing a BPM tool for modeling, documentation and
-              automation of
-              processes, support the definition of processes for each area of the company, identify and
-              optimize critical processes, train the company in business processes.
-
-
+            <div class="h5">+7 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              As my primary cloud platform, I have over six years of hands-on experience designing, deploying and managing scalable data solutions (Certificated).
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Minha principal plataforma de nuvem, com mais de seis anos de experiência prática em projetar, implantar e gerenciar soluções de dados escaláveis (Certificado).
             </p>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Cloud</p>
+            <div class="h5">Azure</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+5 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              With more than five years of experience, I have utilized Azure for various data projects, including data integration with Data Factory, PubSub, Synapse and Databricks. I love Azure experience.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Com mais de cinco anos de experiência, utilizei o Azure em diversos projetos de dados, incluindo integração de dados com Data Factory, PubSub, Synapse e Databricks. Gosto muito da experiência com Azure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Cloud</p>
+            <div class="h5">GCP</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+3 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              Currently expanding my cloud portfolio, I engage in occasional projects on Google Cloud Platform, which has enhanced my ability to work across diverse cloud environments and adopt best-in-class tools and services.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Atualmente expandindo meu portfólio de nuvem, atuo em projetos pontuais na Google Cloud Platform, o que aprimorou minha capacidade de trabalhar em ambientes de nuvem diversos e adotar as melhores ferramentas e serviços do mercado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Platform Skills -->
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Platform</p>
+            <div class="h5">Apache Spark</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+6 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span> - PySpark/Scala/Java/SQL</div>
+            <p *ngIf="currentLang === 'en'">
+              My primary distributed data processing framework with extensive production experience. Expertise in developing large-scale ETL/ELT pipelines, batch and streaming applications, data lake transformations, and performance optimization. Proficient in Spark SQL, DataFrames/Datasets, RDD operations, window functions, UDFs, and broadcast variables. Experience with cluster management (EMR, Databricks, YARN), memory tuning, and troubleshooting performance bottlenecks.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Meu principal framework de processamento distribuído de dados, com ampla experiência em produção. Especialista em desenvolvimento de pipelines ETL/ELT em larga escala, aplicações batch e streaming, transformações em data lake e otimização de performance. Proficiente em Spark SQL, DataFrames/Datasets, operações com RDD, funções de janela, UDFs e variáveis de broadcast. Experiência com gerenciamento de clusters (EMR, Databricks, YARN), ajuste de memória e resolução de gargalos de performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Platform</p>
+            <div class="h5">Apache Airflow</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+4 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span> (MWAA/K8S)</div>
+            <p *ngIf="currentLang === 'en'">
+              Extensive experience developing, deploying, and maintaining production-grade workflows and DAGs. Proficient in workflow orchestration, dependency management, dynamic DAG generation, custom operators/sensors, and XCom for inter-task communication. Deployed Airflow on managed services (AWS MWAA, Cloud Composer) and self-hosted Kubernetes clusters. Strong background in monitoring, alerting, SLA management, and integrating with various data platforms and APIs.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Experiência extensa no desenvolvimento, implantação e manutenção de workflows e DAGs em produção. Proficiente em orquestração de workflows, gestão de dependências, geração dinâmica de DAGs, operadores/sensores customizados e XCom para comunicação entre tarefas. Implantação do Airflow em serviços gerenciados (AWS MWAA, Cloud Composer) e clusters Kubernetes próprios. Forte atuação em monitoramento, alertas, gestão de SLA e integração com diversas plataformas e APIs de dados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Platform</p>
+            <div class="h5">Apache Kafka</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+4 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              Real-time data streaming and event-driven architecture expertise. Proficient in developing producers/consumers, stream processing applications, and CDC pipelines for database synchronization. Experience with Kafka Connect, Schema Registry, partition strategies, and exactly-once semantics. Built high-throughput data ingestion systems, real-time analytics pipelines, and microservices integration using event streaming patterns.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Especialista em streaming de dados em tempo real e arquitetura orientada a eventos. Proficiente no desenvolvimento de produtores/consumidores, aplicações de processamento de streams e pipelines CDC para sincronização de bancos de dados. Experiência com Kafka Connect, Schema Registry, estratégias de partição e garantia de entrega exata (exactly-once). Construção de sistemas de ingestão de dados de alta performance, pipelines analíticos em tempo real e integração de microsserviços usando padrões de eventos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Tool</p>
+            <div class="h5">CDC Tools</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+4 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span> - Debezium/AWS DMS</div>
+            <p *ngIf="currentLang === 'en'">
+              Change Data Capture (CDC) expertise for real-time database replication and synchronization. Implemented CDC pipelines for database migrations, legacy system modernization, and data lake ingestion. Experience with Debezium connectors (MySQL, PostgreSQL, Oracle), AWS Database Migration Service, and stream processing integration.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Especialista em Change Data Capture (CDC) para replicação e sincronização de bancos de dados em tempo real. Implantação de pipelines CDC para migração de bancos, modernização de sistemas legados e ingestão em data lake. Experiência com conectores Debezium (MySQL, PostgreSQL, Oracle), AWS Database Migration Service e integração com processamento de streams.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Programming Languages -->
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Lang</p>
+            <div class="h5">JAVA</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+10 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              My first programming language with over a decade of expertise. Specialized in enterprise application development, backend services, RESTful APIs, and batch processing systems. Proficient in modern frameworks and tools: <strong>Spring Boot, Quarkus, Hibernate/JPA, Maven, Gradle</strong>. Extensive experience building microservices architectures, financial systems, and data integration platforms. Strong knowledge of design patterns, SOLID principles, dependency injection, transaction management, and performance optimization.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Minha primeira linguagem de programação, com mais de uma década de experiência. Especialista em desenvolvimento de aplicações corporativas, serviços backend, APIs RESTful e sistemas de processamento em lote. Proficiente em frameworks e ferramentas modernas: <strong>Spring Boot, Quarkus, Hibernate/JPA, Maven, Gradle</strong>. Ampla experiência na construção de arquiteturas de microsserviços, sistemas financeiros e plataformas de integração de dados. Forte conhecimento em padrões de projeto, princípios SOLID, injeção de dependência, gestão de transações e otimização de performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Lang</p>
+            <div class="h5">PYTHON</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+8 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              My current primary language for data engineering and backend development. Specialized in building data pipelines, ETL/ELT workflows, REST APIs, and automation scripts. Proficient in <strong>Pandas, NumPy, PySpark, Flask, FastAPI, SQLAlchemy, Airflow</strong>. Extensive experience with async programming, data processing at scale, and integration with cloud services (AWS, Azure, GCP). Developed production-grade data platforms, machine learning pipelines, and high-performance microservices.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Minha linguagem principal atualmente para engenharia de dados e desenvolvimento backend. Especialista em construção de pipelines de dados, fluxos ETL/ELT, APIs REST e scripts de automação. Proficiente em <strong>Pandas, NumPy, PySpark, Flask, FastAPI, SQLAlchemy, Airflow</strong>. Ampla experiência com programação assíncrona, processamento de dados em escala e integração com serviços de nuvem (AWS, Azure, GCP). Desenvolvimento de plataformas de dados em produção, pipelines de machine learning e microsserviços de alta performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Lang</p>
+            <div class="h5">SCALA</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+2 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              Functional programming expertise focused on big data processing. Specialized in developing high-performance Spark applications, data transformation jobs, and distributed computing solutions.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Programação funcional voltada para processamento de big data. Experiência no desenvolvimento de aplicações Spark de alta performance, jobs de transformação de dados e soluções de computação distribuída.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Lang</p>
+            <div class="h5">SQL</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+10 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              Advanced SQL expertise across multiple database systems. Proficient in complex query optimization, stored procedures, triggers, and functions. Experience with <strong>T-SQL (SQL Server), PL/SQL (Oracle), PL/pgSQL (PostgreSQL), HiveQL</strong>. Strong background in database design, indexing strategies, query performance tuning, and data modeling (3NF, star schema, snowflake schema).
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Especialista em SQL avançado em diversos sistemas de banco de dados. Proficiente em otimização de queries complexas, procedures, triggers e funções. Experiência com <strong>T-SQL (SQL Server), PL/SQL (Oracle), PL/pgSQL (PostgreSQL), HiveQL</strong>. Forte atuação em modelagem de dados, estratégias de indexação, tuning de performance de queries e modelagem (3FN, estrela, floco de neve).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Lang</p>
+            <div class="h5">JAVASCRIPT/TYPESCRIPT</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+8 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              Full-stack development experience with modern JavaScript ecosystem. Backend development with <strong>Node.js, Express, NestJS</strong>. Frontend experience with <strong>Angular, React, Vue.js</strong>. Proficient in async/await patterns, REST APIs, WebSockets, and microservices architecture.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Experiência em desenvolvimento full-stack com o ecossistema moderno de JavaScript. Backend com <strong>Node.js, Express, NestJS</strong>. Frontend com <strong>Angular, React, Vue.js</strong>. Proficiente em padrões async/await, APIs REST, WebSockets e arquitetura de microsserviços.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infrastructure -->
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Infra</p>
+            <div class="h5">DevOps & Infrastructure</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+7 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              Extensive experience with containerization (<strong>Docker</strong>), orchestration (<strong>Kubernetes</strong>), and Linux system administration. Proficient in Infrastructure as Code using <strong>Terraform, CloudFormation, AWS CDK</strong>. Experience with CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions, AWS CodePipeline), monitoring and observability (Grafana, Prometheus, CloudWatch, Datadog). Strong background in building and deploying scalable, resilient, and automated data infrastructure in cloud and hybrid environments.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Ampla experiência com conteinerização (<strong>Docker</strong>), orquestração (<strong>Kubernetes</strong>) e administração de sistemas Linux. Proficiente em Infraestrutura como Código usando <strong>Terraform, CloudFormation, AWS CDK</strong>. Experiência com pipelines CI/CD (Jenkins, GitLab CI, GitHub Actions, AWS CodePipeline), monitoramento e observabilidade (Grafana, Prometheus, CloudWatch, Datadog). Forte atuação na construção e implantação de infraestrutura de dados escalável, resiliente e automatizada em ambientes cloud e híbridos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Databases -->
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Data</p>
+            <div class="h5">Databases & Data Stores</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">+12 <span *ngIf="currentLang === 'pt'">anos</span> <span *ngIf="currentLang === 'en'">years</span></div>
+            <p *ngIf="currentLang === 'en'">
+              Expert-level experience with relational databases (<strong>PostgreSQL, MySQL, Oracle, SQL Server</strong>) and NoSQL databases (<strong>MongoDB, DynamoDB, Redis, Cassandra</strong>). Proficient in cloud data warehouses (<strong>Redshift, Snowflake, BigQuery</strong>) and data lake technologies (<strong>S3, Delta Lake, Hudi, Iceberg</strong>). Strong background in data modeling, query optimization, indexing strategies, and performance tuning for both OLTP and OLAP workloads.
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              Experiência avançada com bancos de dados relacionais (<strong>PostgreSQL, MySQL, Oracle, SQL Server</strong>) e NoSQL (<strong>MongoDB, DynamoDB, Redis, Cassandra</strong>). Proficiente em data warehouses na nuvem (<strong>Redshift, Snowflake, BigQuery</strong>) e tecnologias de data lake (<strong>S3, Delta Lake, Hudi, Iceberg</strong>). Forte atuação em modelagem de dados, otimização de queries, estratégias de indexação e tuning de performance para workloads OLTP e OLAP.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Version Control & Collaboration -->
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>Tool</p>
+            <div class="h5">Versioning & Collaboration</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Tools</div>
+            <p *ngIf="currentLang === 'en'">
+              GIT/HUB/LAB/AZURE, Nexus, Basecamp, Toggl, Sharepoint, Jira, Confluence, Slack, Microsoft Teams
+            </p>
+            <p *ngIf="currentLang === 'pt'">
+              GIT/HUB/LAB/AZURE, Nexus, Basecamp, Toggl, Sharepoint, Jira, Confluence, Slack, Microsoft Teams
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
-
 
 
 

@@ -9,8 +9,15 @@ import * as AOS from 'aos';
 export class AppComponent implements OnInit, OnDestroy {
 
   navbarVisible: boolean = false;
+  currentLang: string = 'en'; // Default language is English
   private bodyClickListener!: () => void;
-  constructor(private renderer: Renderer2, private elRef: ElementRef) {}
+  constructor(private renderer: Renderer2, private elRef: ElementRef) {
+    // Check if there's a saved language preference
+    const savedLang = localStorage.getItem('preferredLang');
+    if (savedLang) {
+      this.currentLang = savedLang;
+    }
+  }
 
   title = 'resume';
 
@@ -82,6 +89,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
     // Set navbarVisible to false
     this.navbarVisible = false;
+  }
+
+  toggleLanguage() {
+    this.currentLang = this.currentLang === 'en' ? 'pt' : 'en';
+    localStorage.setItem('preferredLang', this.currentLang);
   }
 
 
